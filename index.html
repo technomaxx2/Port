@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio | Pierre Renelson - Développeur Fullstack</title>
+  <meta name="description" content="Portfolio professionnel de Pierre Renelson, Développeur Fullstack et Technicien Informatique">
+  
+  <!-- Intégration Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#3B82F6',
+            secondary: '#8B5CF6',
+            accent: '#F97316',
+            dark: '#1F2937',
+            light: '#F3F4F6'
+          },
+          fontFamily: {
+            sans: ['Poppins', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+  
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <style>
+    .spiral::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 40px;
+      background: repeating-linear-gradient(
+        180deg,
+        #E5E7EB,
+        #E5E7EB 15px,
+        #D1D5DB 15px,
+        #D1D5DB 30px
+      );
+    }
+    
+    .card-hover {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .card-hover:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
+  </style>
+</head>
+<body class="font-sans bg-gradient-to-br from-gray-50 to-gray-100 text-gray-800 min-h-screen">
+  <!-- Header -->
+  <header class="fixed w-full top-0 z-50 bg-white/90 backdrop-blur-sm shadow-sm">
+    <nav class="container mx-auto px-6 py-4">
+      <div class="flex items-center justify-between">
+        <!-- Logo -->
+        <a href="#" class="flex items-center space-x-3 group">
+          <div class="w-10 h-10 bg-gradient-to-r from-primary to-secondary rounded-lg flex items-center justify-center transform group-hover:rotate-6 transition duration-300">
+            <span class="font-bold text-white text-lg">PR</span>
+          </div>
+          <span class="text-xl font-bold text-dark tracking-tight hidden sm:inline-block">Renelson.dev</span>
+        </a>
+
+        <!-- Navigation Desktop -->
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="index.html" class="text-dark hover:text-accent transition-colors font-medium relative group">
+            Accueil
+            <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full"></span>
+          </a>
+          <a href="projets.html" class="text-dark hover:text-accent transition-colors font-medium relative group">
+            Projets
+            <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full"></span>
+          </a>
+          <a href="blog.html" class="text-dark hover:text-accent transition-colors font-medium relative group">
+            Blog
+            <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full"></span>
+          </a>
+          <a href="contact.html" class="px-4 py-2 bg-gradient-to-r from-primary to-secondary text-white rounded-lg hover:opacity-90 transition-opacity font-medium">
+            Contact
+          </a>
+        </div>
+
+        <!-- Menu Mobile -->
+        <button id="mobile-menu-button" class="md:hidden text-dark focus:outline-none">
+          <i class="fas fa-bars text-2xl"></i>
+        </button>
+      </div>
+      
+      <!-- Navigation Mobile -->
+      <div id="mobile-menu" class="hidden md:hidden mt-4 space-y-3 pb-3">
+        <a href="index.html" class="block px-3 py-2 rounded-lg hover:bg-gray-100 font-medium">Accueil</a>
+        <a href="p.html" class="block px-3 py-2 rounded-lg hover:bg-gray-100 font-medium">Projets</a>
+        <a href="contact.html" class="block px-3 py-2 bg-gradient-to-r from-primary to-secondary text-white rounded-lg font-medium text-center">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container mx-auto pt-28 pb-16 px-4 md:px-6">
+    <!-- Notebook Design -->
+    <div class="relative bg-white rounded-xl shadow-lg overflow-hidden max-w-6xl mx-auto">
+      <!-- Notebook Cover Effect -->
+      <div class="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-primary via-accent to-secondary"></div>
+      
+      <div class="grid md:grid-cols-12">
+        <!-- Left Page - About Me -->
+        <div class="md:col-span-5 p-8 md:p-10 border-r border-gray-100">
+          <div class="flex flex-col items-center text-center mb-8">
+            <div class="relative mb-6">
+              <img src="media/rep.jpg"
+                   alt="Pierre Renelson" 
+                   class="w-40 h-40 rounded-full border-4 border-white shadow-lg object-cover">
+              <div class="absolute -bottom-2 right-4 bg-accent text-white px-3 py-1 rounded-full text-sm font-medium shadow-md">
+                <i class="fas fa-check mr-1"></i> Disponible
+              </div>
+            </div>
+            
+            <h1 class="text-3xl font-bold text-dark mb-2">Pierre Renelson</h1>
+            <p class="text-lg text-gray-600 mb-4">Développeur Fullstack & Consultant IT</p>
+            
+            <div class="flex space-x-4">
+              <a href="#" class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-dark hover:bg-primary hover:text-white transition">
+                <i class="fab fa-github"></i>
+              </a>
+              <a href="#" class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-dark hover:bg-blue-500 hover:text-white transition">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a href="#" class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-dark hover:bg-blue-400 hover:text-white transition">
+                <i class="fab fa-twitter"></i>
+              </a>
+            </div>
+          </div>
+          
+          <div class="space-y-6">
+            <div>
+              <h3 class="text-lg font-semibold text-dark mb-3 flex items-center">
+                <i class="fas fa-user-tie text-accent mr-2"></i> À Propos
+              </h3>
+              <p class="text-gray-600">
+                Développeur passionné avec 5 ans d'expérience dans la création de solutions web performantes. 
+                Spécialisé dans les technologies modernes avec une approche centrée sur l'utilisateur.
+              </p>
+            </div>
+            
+            <div>
+              <h3 class="text-lg font-semibold text-dark mb-3 flex items-center">
+                <i class="fas fa-code text-accent mr-2"></i> Compétences
+              </h3>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-3 py-1 bg-blue-50 text-primary rounded-full text-sm font-medium">JavaScript</span>
+                <span class="px-3 py-1 bg-purple-50 text-secondary rounded-full text-sm font-medium">React</span>
+                <span class="px-3 py-1 bg-orange-50 text-accent rounded-full text-sm font-medium">Node.js</span>
+                <span class="px-3 py-1 bg-green-50 text-green-600 rounded-full text-sm font-medium">Python</span>
+                <span class="px-3 py-1 bg-indigo-50 text-indigo-600 rounded-full text-sm font-medium">Django</span>
+                <span class="px-3 py-1 bg-red-50 text-red-600 rounded-full text-sm font-medium">Firebase</span>
+                <span class="px-3 py-1 bg-yellow-50 text-yellow-600 rounded-full text-sm font-medium">MongoDB</span>
+                <span class="px-3 py-1 bg-gray-50 text-gray-600 rounded-full text-sm font-medium">Docker</span>
+              </div>
+            </div>
+            
+            <div>
+              <h3 class="text-lg font-semibold text-dark mb-3 flex items-center">
+                <i class="fas fa-globe text-accent mr-2"></i> Langues
+              </h3>
+              <div class="space-y-2">
+                <div>
+                  <div class="flex justify-between text-sm text-gray-600 mb-1">
+                    <span>Français</span>
+                    <span>Natif</span>
+                  </div>
+                  <div class="w-full bg-gray-200 rounded-full h-2">
+                    <div class="bg-primary h-2 rounded-full" style="width: 100%"></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex justify-between text-sm text-gray-600 mb-1">
+                    <span>Anglais</span>
+                    <span>Courant</span>
+                  </div>
+                  <div class="w-full bg-gray-200 rounded-full h-2">
+                    <div class="bg-primary h-2 rounded-full" style="width: 85%"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Right Page - Content -->
+        <div class="md:col-span-7 p-8 md:p-10 bg-gray-50">
+          <div class="space-y-8">
+            <!-- Experience -->
+            <div>
+              <h2 class="text-2xl font-bold text-dark mb-6 pb-2 border-b border-gray-200 flex items-center">
+                <i class="fas fa-briefcase text-accent mr-3"></i> Expérience Professionnelle
+              </h2>
+              
+              <div class="space-y-6">
+                <div class="card-hover bg-white p-5 rounded-lg shadow-sm">
+                  <div class="flex justify-between items-start">
+                    <div>
+                      <h3 class="font-bold text-lg text-dark">Développeur Fullstack Senior</h3>
+                      <p class="text-primary font-medium">TechSolutions Inc.</p>
+                    </div>
+                    <span class="px-3 py-1 bg-accent/10 text-accent text-sm rounded-full">2020 - Présent</span>
+                  </div>
+                  <p class="text-gray-600 mt-2">
+                    Conception et développement d'applications web complexes avec React et Node.js. 
+                    Optimisation des performances et mise en place de bonnes pratiques.
+                  </p>
+                </div>
+                
+                <div class="card-hover bg-white p-5 rounded-lg shadow-sm">
+                  <div class="flex justify-between items-start">
+                    <div>
+                      <h3 class="font-bold text-lg text-dark">Formateur en Développement Web</h3>
+                      <p class="text-primary font-medium">Digital Learning Academy</p>
+                    </div>
+                    <span class="px-3 py-1 bg-accent/10 text-accent text-sm rounded-full">2018 - 2020</span>
+                  </div>
+                  <p class="text-gray-600 mt-2">
+                    Formation aux technologies front-end et back-end pour des groupes de 15 à 20 apprenants. 
+                    Création de supports pédagogiques et suivi individualisé.
+                  </p>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Education -->
+            <div>
+              <h2 class="text-2xl font-bold text-dark mb-6 pb-2 border-b border-gray-200 flex items-center">
+                <i class="fas fa-graduation-cap text-accent mr-3"></i> Formation
+              </h2>
+              
+              <div class="card-hover bg-white p-5 rounded-lg shadow-sm">
+                <div class="flex justify-between items-start">
+                  <div>
+                    <h3 class="font-bold text-lg text-dark">Master en Informatique</h3>
+                    <p class="text-primary font-medium">Université de Paris</p>
+                  </div>
+                  <span class="px-3 py-1 bg-accent/10 text-accent text-sm rounded-full">2016 - 2018</span>
+                </div>
+                <p class="text-gray-600 mt-2">
+                  Spécialisation en architectures distribuées et cloud computing. 
+                  Mémoire sur l'optimisation des performances des applications microservices.
+                </p>
+              </div>
+            </div>
+            
+            <!-- Projects Preview -->
+            <div>
+              <h2 class="text-2xl font-bold text-dark mb-6 pb-2 border-b border-gray-200 flex items-center">
+                <i class="fas fa-laptop-code text-accent mr-3"></i> Projets Récents
+              </h2>
+              
+              <div class="grid grid-cols-2 gap-4">
+                <a href="projets.html#projet1" class="card-hover group">
+                  <div class="bg-white p-4 rounded-lg shadow-sm h-full">
+                    <div class="h-24 bg-gradient-to-r from-primary to-secondary rounded-lg mb-3 flex items-center justify-center text-white text-3xl">
+                      <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="font-bold text-dark group-hover:text-accent transition">Analyse Financière</h3>
+                    <p class="text-gray-600 text-sm mt-1">Dashboard React pour traders</p>
+                  </div>
+                </a>
+                
+                <a href="projets.html#projet2" class="card-hover group">
+                  <div class="bg-white p-4 rounded-lg shadow-sm h-full">
+                    <div class="h-24 bg-gradient-to-r from-accent to-yellow-500 rounded-lg mb-3 flex items-center justify-center text-white text-3xl">
+                      <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <h3 class="font-bold text-dark group-hover:text-accent transition">E-commerce</h3>
+                    <p class="text-gray-600 text-sm mt-1">Plateforme Next.js & Stripe</p>
+                  </div>
+                </a>
+              </div>
+              
+              <div class="mt-4 text-center">
+                <a href="projets.html" class="inline-flex items-center text-primary font-medium hover:text-accent transition">
+                  Voir tous mes projets <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-gray-300 py-12">
+    <div class="container mx-auto px-6">
+      <div class="grid md:grid-cols-4 gap-8">
+        <div>
+          <h3 class="text-white text-lg font-bold mb-4">Renelson.dev</h3>
+          <p class="text-gray-400">Création de solutions web sur mesure avec les dernières technologies.</p>
+        </div>
+        
+        <div>
+          <h4 class="text-white font-semibold mb-4">Navigation</h4>
+          <ul class="space-y-2">
+            <li><a href="index.html" class="text-gray-400 hover:text-white transition">Accueil</a></li>
+            <li><a href="projets.html" class="text-gray-400 hover:text-white transition">Projets</a></li>
+            <li><a href="blog.html" class="text-gray-400 hover:text-white transition">Blog</a></li>
+            <li><a href="contact.html" class="text-gray-400 hover:text-white transition">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="text-white font-semibold mb-4">Contact</h4>
+          <ul class="space-y-2">
+            <li class="flex items-center">
+              <i class="fas fa-envelope text-accent mr-2"></i>
+              <a href="mailto:contact@renelson.dev" class="text-gray-400 hover:text-white transition">contact@renelson.dev</a>
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-phone text-accent mr-2"></i>
+              <span class="text-gray-400">+33 6 12 34 56 78</span>
+            </li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="text-white font-semibold mb-4">Réseaux Sociaux</h4>
+          <div class="flex space-x-4">
+            <a href="#" class="w-10 h-10 rounded-full bg-gray-700 hover:bg-primary flex items-center justify-center text-white transition">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="#" class="w-10 h-10 rounded-full bg-gray-700 hover:bg-blue-600 flex items-center justify-center text-white transition">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="#" class="w-10 h-10 rounded-full bg-gray-700 hover:bg-blue-400 flex items-center justify-center text-white transition">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="border-t border-gray-800 mt-10 pt-6 text-center text-gray-500 text-sm">
+        <p>© 2023 Pierre Renelson. Tous droits réservés.</p>
+      </div>
+    </div>
+  </footer>
+
+  
